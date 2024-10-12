@@ -1,0 +1,18 @@
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        translate: 0 100px;
+    }
+
+    to {
+        translate: 0 0;
+    }
+}
+@keyframes adjust-header {
+    to {
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: 20px;
+        height: 24px;
+    }
+}

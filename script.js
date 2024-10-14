@@ -1,12 +1,15 @@
 const container = document.getElementById('container')
 
-const getData = async()=> {
+let data;
+
+const getData = async ()=> {
     try {
-        const response = await fetch('https://dog.ceo/api/breed/hound/images');
-        return response.json();
-    } catch (error) {
-        console.error
+        const res = await fetch('https://dog.ceo/api/breed/hound/images/random/10')
+        const response = await res.json();
+        data = response;
+    } catch(error) {
+        console.error('Error:', error)
     }
 }
-const data = getData();
-
+getData().
+then(()=> console.log(data))

@@ -1,9 +1,39 @@
+* {
+    box-sizing: border-box;
+    min-width: 0;
+  }
+  
+  body {
+    min-height: 100dvh;
+    background-color: #a2b38b;
+  }
+  
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+  
+  p {
+    text-wrap: pretty;
+  }
+
 h1 {
     text-align: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    animation: adjust-header linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 200px;
+    z-index: 99;
 }
 
-
-
+.container > span {
+  max-width: 23%;
+  max-height: 25%;
+  animation: reveal both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+}
 @keyframes reveal {
     from {
         opacity: 0;
@@ -11,6 +41,7 @@ h1 {
     }
 
     to {
+        opacity: 1;
         translate: 0 0;
     }
 }

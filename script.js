@@ -13,7 +13,7 @@ const getData = async ()=> {
 getData().
 then((data)=> {
     images = data.message.map((image)=> {
-        return `<span class="rounded overflow-hidden m-2"><img class="images w-100 h-100" src=${image} alt="dog"/></span>`
+        return `<span class="rounded overflow-hidden m-2"><img class="images w-100 h-100 object-fit-cover" src=${image} alt="dog"/></span>`
     })
     container.innerHTML = images.join('')
 })

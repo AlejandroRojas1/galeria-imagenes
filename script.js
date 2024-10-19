@@ -10,10 +10,24 @@ const getData = async ()=> {
         console.error('Error:', error)
     }
 }
-getData().
-then((data)=> {
-    images = data.message.map((image)=> {
-        return `<span class="rounded overflow-hidden m-2"><img class="images w-100 h-100 object-fit-cover" src=${image} alt="dog"/></span>`
-    })
-    container.innerHTML = images.join('')
-})
+const renderImages = async()=> {
+    const data = await getData();
+    if(data && data.message) {
+        const images = data.message.map((image)=> {
+            return `<span class="rounded overflow-hidden m-2"><img class="images w-100 h-100 object-fit-cover" src=${image} alt="dog"/></span>`
+        });
+        container.innerHTML = images.join('');
+    } else {
+        console.error('Datos no validos recibidos de la API')
+    }
+}
+renderImages()
+
+
+// getData().
+// then((data)=> {
+//     images = data.message.map((image)=> {
+//         return `<span class="rounded overflow-hidden m-2"><img class="images w-100 h-100 object-fit-cover" src=${image} alt="dog"/></span>`
+//     })
+//     container.innerHTML = images.join('')
+// })
